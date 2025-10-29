@@ -14,4 +14,5 @@ def order_vector(nums):
 
 print("running")
 order_vector([3,1,2,4])
+order_vector([0])
 print("ran")
