@@ -19,7 +19,7 @@ def reverse_list_with_stack(data_list):
         print(f"pushed {item}. Stack: {S}")
     
     index = 0
-    while not S.is_empty():
+    while not S._is_empty():
         item = S.pop() 
         
         data_list[index] = item

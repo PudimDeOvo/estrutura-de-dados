@@ -21,7 +21,7 @@ class ArrayQueue(object):
         Raises Empty if empty."""
         
         if self._is_empty():
-            raise Empty("Queue is empty.")
+            raise ValueError("Queue is empty.")
         
         return self.list[self.front]
     

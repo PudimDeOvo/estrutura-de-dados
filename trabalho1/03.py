@@ -8,7 +8,7 @@ def transfer(S, T):
     
     O(n)
     """
-    while not S.is_empty():
+    while not S._is_empty():
         
         element = S.pop()
         

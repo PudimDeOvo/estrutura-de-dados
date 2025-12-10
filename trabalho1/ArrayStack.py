@@ -9,7 +9,7 @@ class ArrayStack(object):
         Running time: O(1)."""
         return len(self.list)
     
-    def is_empty(self):
+    def _is_empty(self):
         """Returns True if stack is empty, False if otherwise.
         Running time: O(1)."""
         
@@ -54,7 +54,7 @@ class ArrayStack(object):
         This method demonstrates how stack operations can be done recursively.
         """
         
-        if self.is_empty():
+        if self._is_empty():
             return
         
         self.pop() 
