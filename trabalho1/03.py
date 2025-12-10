@@ -20,9 +20,10 @@ T = ArrayStack.ArrayStack()
 S.push(10) 
 S.push(20)
 S.push(30) 
-print(f"S antes: {S.__str__()}") 
+print(f"S before: {S.__str__()}") 
+print(f"T before: {T.__str__()}") 
 
 transfer(S, T)
 
-print(f"S depois: {S.__str__()}") 
-print(f"T depois: {T.__str__()}") 
+print(f"S after: {S.__str__()}") 
+print(f"T after: {T.__str__()}") 

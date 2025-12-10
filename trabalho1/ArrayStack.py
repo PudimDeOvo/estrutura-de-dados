@@ -46,3 +46,17 @@ class ArrayStack(object):
         Necessery for print statements in other files.
         """
         return str(self.list)
+    
+    def recursive_empty(self):
+        """
+        Recursively removes all elements from the stack.
+        
+        This method demonstrates how stack operations can be done recursively.
+        """
+        
+        if self.is_empty():
+            return
+        
+        self.pop() 
+        
+        self.recursive_empty()

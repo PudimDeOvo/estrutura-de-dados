@@ -9,7 +9,7 @@ class ArrayQueue(object):
         
     def __len__(self):
         """Returns the number of elements in the queue."""
-        return size
+        return self.size
     
     def _is_empty(self) -> bool:
         """Returns True if queue is empty, False if otherwise.
@@ -20,7 +20,7 @@ class ArrayQueue(object):
         """Returns (without removing) the first element of the queue.
         Raises Empty if empty."""
         
-        if self.is_empty():
+        if self._is_empty():
             raise Empty("Queue is empty.")
         
         return self.list[self.front]
@@ -28,19 +28,19 @@ class ArrayQueue(object):
     def dequeue(self):
         """Removes and returns the first element of queue. Raises Empty if empty."""
         
-        if self.is_empty():
+        if self._is_empty():
             raise Empty("Queue is empty.")
         temp = self.list[self.front]
-        self.front = self.front + 1 % len(self.list)  
+        self.front = (self.front + 1) % len(self.list)  
         self.size -= 1         
         return temp
     
-    def enqueue(self):
+    def enqueue(self, e):
         """Adds an element to the back of queue."""
         if self.size == len(self.list):
-            self.resize(2*len(self.list))
+            self._resize(2*len(self.list))
         avail = (self.front + self.size) % len(self.list)
-        self.data[avail] = e
+        self.list[avail] = e
         self.size += 1
         
     def _resize(self, cap): 
@@ -52,6 +52,12 @@ class ArrayQueue(object):
             self.list[k] = old[walk]
             walk = (1 + walk) & len(old)
         self.front = 0
-            
+    
+    def __str__(self):
+        """
+        Returns a string representation of the queue.
+        Necessery for print statements in other files.
+        """
+        return str(self.list)
         
         

@@ -22,7 +22,7 @@ def _operations_on_stack(stack):
     
     return result
 
-my_stack = ArrayStack.ArrayStack() 
-final_result_tuple = _operations_on_stack(my_stack)
+stack = ArrayStack.ArrayStack() 
+final_result = _operations_on_stack(stack)
 
-print(final_result_tuple)
+print(final_result)
